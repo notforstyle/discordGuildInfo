@@ -30,6 +30,15 @@ function Guilds_Size(){
 	console.log(guild_size)
 }
 
+function Guilds_Channels(){
+	var guilds_channels = bot.channels.cache.map(c => `
+			Channel_ : ${c.name}\n
+			Channel_ID : ${c.id}\n
+			Channel_TYPE : ${c.type}\n
+		`)
+	console.log(guilds_channels)
+}
+
 function Guilds_Users(){
 	var guild_users = bot.users.cache.map(u =>
 
@@ -59,6 +68,10 @@ rl.on('line', (line) => {
 
 		case 'test':
 			console.log('Yes, Im working')
+		break;
+
+		case 'channels':
+			Guilds_Channels()
 		break;
 
 		case 'size':
